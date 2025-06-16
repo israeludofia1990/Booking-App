@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
@@ -12,8 +12,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//basic route
-app.get('/', (req, res) => {
+// Basic route with TypeScript types for Request and Response
+app.get('/', (req: Request, res: Response) => {
   res.json({ message: 'Welcome to the Booking App API!' });
 });
 
